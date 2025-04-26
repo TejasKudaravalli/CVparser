@@ -1,0 +1,20 @@
+[project]
+name = "cv-parser"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "aiofiles>=24.1.0",
+    "fastapi[standard]>=0.115.12",
+    "jupyter>=1.1.1",
+    "pandas>=2.2.3",
+    "pip>=25.0.1",
+    "pymupdf>=1.25.5",
+    "python-docx>=1.1.2",
+    "rich>=14.0.0",
+    "setuptools>=79.0.1",
+    "spacy>=3.8.5",
+    "striprtf>=0.0.29",
+    "wheel>=0.45.1",
+]
