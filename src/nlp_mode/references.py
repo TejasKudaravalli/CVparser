@@ -8,7 +8,6 @@ def extract_references(references_str: str):
     references_list = []
     possible_references = re.split(r"\n\s*\n|[-]{3,}", references_str)
     possible_references.append("")
-    print(possible_references)
 
     for ref in possible_references:
         ref = ref.strip()

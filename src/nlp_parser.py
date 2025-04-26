@@ -100,7 +100,7 @@ def extract_json_from_resume_nlp(file_path: str):
 
     references_section = match_section(cv_sections, ["References", "Referees", "Recommendation Letters"])
     references_str = references_section.get("content","")
-    references_details = extract_references(references_str)
+    # references_details = extract_references(references_str)
 
 
     resume_json["basic"] = personal_details
