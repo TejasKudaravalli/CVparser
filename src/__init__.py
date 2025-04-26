@@ -1,0 +1,1 @@
+from .nlp_parser import extract_json_from_resume_nlp
