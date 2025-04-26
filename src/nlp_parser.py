@@ -109,7 +109,7 @@ def extract_json_from_resume_nlp(file_path: str):
     resume_json["professional_experiences"] = experience_details
     resume_json["awards"] = awards_details
     resume_json["trainings_and_certifications"] = trainings_details
-    resume_json["references"] = references_details
+    # resume_json["references"] = references_details
     return resume_json
 
 if __name__ == "__main__":

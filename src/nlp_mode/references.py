@@ -7,10 +7,12 @@ nlp = spacy.load("en_core_web_sm")
 def extract_references(references_str: str):
     references_list = []
     possible_references = re.split(r"\n\s*\n|[-]{3,}", references_str)
+    possible_references.append("")
+    print(possible_references)
 
     for ref in possible_references:
         ref = ref.strip()
-        doc = nlp
+        doc = nlp(ref)
         if not ref:
             continue
 
@@ -33,11 +35,11 @@ def extract_references(references_str: str):
         if match:
             phone_number = match.group()
         else:
-            phone_number = None
+            phone_number = ""
         ref = ref.replace(phone_number, "")
 
         # Extract full name (assuming the first line or something before email/phone)
-        full_name = None
+        full_name = ""
         for ent in doc.ents:
             if ent.label_ == "PERSON":
                 full_name = ent.text
@@ -46,7 +48,7 @@ def extract_references(references_str: str):
             ref = ref.replace(full_name, "")
 
         # Extract Company
-        company = None
+        company = ""
         for ent in doc.ents:
             if ent.label_ == "ORG":
                 company = ent.text
